@@ -22,6 +22,6 @@ for (x, y, w, h) in faces:
   cv2.rectangle(img, (x-5, y-5), (x+w+5, y+h+5), (0, 0, 0), 5)
 
 cv2.imshow('press any key to exit', img)
-cv2.imwrite('example.jpg',img)
+cv2.imwrite('example_result.jpg',img)
 cv2.waitKey(0) # blocks until a key is pressed when window is active.
 cv2.destroyAllWindows()
