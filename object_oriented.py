@@ -102,7 +102,7 @@ class Stage:
 
 
 
-	cv2.imshow("Luc's Head Tracking Game", img)
+		cv2.imshow("Luc's Head Tracking Game", img)
 
 
 #--------------------------------------------------------------------------
@@ -126,10 +126,12 @@ while True:
 		print("Error reading frame. Exiting...")
 
 	facexy = ff.find_face(frame)
-	frame_small = cv2.resize(frame, (frame.shape[1]//4, frame.shape[0]//4), interpolation= cv2.INTER_LINEAR)
+	frame_small = cv2.resize(frame, 
+		(frame.shape[1]//4, frame.shape[0]//4), 
+		interpolation= cv2.INTER_LINEAR)
 	cv2.imshow('q to quit', frame_small)
 	if not moved:
-		cv2.imshow('q to quit',1080,0)
+		cv2.moveWindow('q to quit',1080,0)
 		moved = True 
 	if facexy is not None:
 		img = stage.update(facexy)
